@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff6b6b,#4ecdc4);
+    min-height:100vh;
+    padding:40px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#333;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#4ecdc4;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:12px;
+    text-align:center;
+}
+
+tr:nth-child(even){
+    background:#f2f2f2;
+}
+
+tr:hover{
+    background:#ffe66d;
+}
+
+.btn{
+    padding:8px 15px;
+    background:#ff6b6b;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎓 Student Management System</h1>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+</tr>
+
+{% for student in students %}
+<tr>
+<td>{{ student.id }}</td>
+<td>{{ student.name }}</td>
+<td>{{ student.email }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
